@@ -2,9 +2,8 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * the function pint_alphabet prints the alphabet, in lowercase, followed by a new line.
- * Return: Always 0 (Success)
+ * print_alphabet - that prints the alphabet.
+ *
  */
 
 
