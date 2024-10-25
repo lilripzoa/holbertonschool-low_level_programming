@@ -4,21 +4,17 @@
 /**
  * _abs - calcule la valeur absolue d'un entier.
  * @c: l'entier dont on veut la valeur absolue.
- * 
  * Return: la valeur absolue de n.
  */
 
-int _abs(int)
+int _abs(int c)
 {
-	int c;
-	int b = _abs(c)
-	
-	if (b >= '0')
+	if (c < '0')
 	{
-		putchar(c);
+		return (-c);
+	}
+	else
+	{
 		return (c);
 	}
-	return (0);
-
-
 }
