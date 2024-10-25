@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _asalpha - checks for alphabetic characters.
+ * _isalpha - checks for alphabetic characters.
  *
  * @c: checks characters
  *
