@@ -17,16 +17,17 @@ void jack_bauer(void)
 
 	for (heure_dizaine = '0'; heure_dizaine <= '2'; heure_dizaine++)
 		for (heure_unite = '0'; heure_unite <= '3'; heure_unite++)
-			for (minute_dizaine = '0'; minute_dizaine <= '5'; minute_dizaine++)					for (minute_unite = '0'; minute_unite <= '9'; minute_unite++)
-			{
-				_putchar(heure_dizaine);
-				_putchar(heure_unite);
-				_putchar('\72');
-				_putchar(minute_dizaine);
-				_putchar(minute_unite);
-				_putchar('\n');
-				sleep(60);
-			}
+			for (minute_dizaine = '0'; minute_dizaine <= '5'; minute_dizaine++)
+				for (minute_unite = '0'; minute_unite <= '9'; minute_unite++)
+				{
+					_putchar(heure_dizaine);
+					_putchar(heure_unite);
+					_putchar('\72');
+					_putchar(minute_dizaine);
+					_putchar(minute_unite);
+					_putchar('\n');
+					sleep(60);
+				}
 
 	_putchar('\n');
 
