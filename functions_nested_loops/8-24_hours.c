@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-#include <unistd.h>
 
 /**
  * jack_bauer - that prints every minute of the day.
@@ -26,7 +25,6 @@ void jack_bauer(void)
 					_putchar(minute_dizaine);
 					_putchar(minute_unite);
 					_putchar('\n');
-					sleep(60);
 				}
 
 	_putchar('\n');
