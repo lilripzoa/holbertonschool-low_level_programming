@@ -16,6 +16,9 @@ void jack_bauer(void)
 
 	for (heure_dizaine = '0'; heure_dizaine <= '2'; heure_dizaine++)
 		for (heure_unite = '0'; heure_unite <= '3'; heure_unite++)
+		{
+			if (heure_dizaine == '2' && heure_unite == '4')
+				return;
 			for (minute_dizaine = '0'; minute_dizaine <= '5'; minute_dizaine++)
 				for (minute_unite = '0'; minute_unite <= '9'; minute_unite++)
 				{
@@ -26,6 +29,7 @@ void jack_bauer(void)
 					_putchar(minute_unite);
 					_putchar('\n');
 				}
+		}
 
 	_putchar('\n');
 
