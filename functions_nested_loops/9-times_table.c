@@ -18,7 +18,7 @@ void times_table(void)
 
 			if (c >= 10)
 				_putchar(c / 10 + '0');
-			else 
+			else
 				_putchar(' ');
 			_putchar(c % 10 + '0');
 
