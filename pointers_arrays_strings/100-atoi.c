@@ -13,21 +13,25 @@ int _atoi(char *s)
 	int y = 0;
 	int x = 1;
 
-	while (s[i] != '\0')
+	while (s[i] == ' ')
+	{
+		i++;
+	}
+
+	while (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
 		{
 			x *= -1;
 		}
-		else if (s[i] >= '0' && s[i] <= '9')
-		{
-			y = y * 10 + (s[i] - '0') * x;
-
-			break;
-		}
-
 		i++;
 	}
 
-	return (y);
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		y = y * 10 + (s[i] - '0');
+		i++;
+	}
+
+	return y * x;
 }
