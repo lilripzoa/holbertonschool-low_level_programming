@@ -31,9 +31,16 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
+		if (atoi(argv[i]) <= 0)
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
 	entier1 = atoi(argv[1]);
 	entier2 = atoi(argv[2]);
+
+
 	printf("%d\n", entier1 * entier2);
 	return (0);
 }
