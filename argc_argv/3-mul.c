@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		printf("error 404");
+		printf("error 404\n");
 		return (1);
 	}
 
@@ -24,8 +24,11 @@ int main(int argc, char *argv[])
 
 	if (entier1 == 0 || entier2 == 0)
 	{
-		printf("error 404");
-		return (1);
+		if (argv[1][0] != '0' || argv[2][0] != '0')
+		{
+			printf("error 404\n");
+			return (1);
+		}
 	}
 
 	printf("%d\n", entier1 * entier2);
