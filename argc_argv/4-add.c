@@ -12,8 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	int a = 0;
-	int i, x;
+	int i, x, a;
 
 	if (argc == 1)
 	{
@@ -28,7 +27,7 @@ int main(int argc, char *argv[])
 			if (!isdigit(argv[i][x]))
 			{
 
-				printf("error 404\n");
+				printf("error\n");
 				return (1);
 			}
 
