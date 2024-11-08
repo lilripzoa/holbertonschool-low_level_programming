@@ -9,33 +9,29 @@
 
 int _sqrt_recursion(int n)
 {
-	int i = 1;
-	int y = 0;
+	return (_sqrt_recurs(n, 1));
+}
+/**
+ * _sqrt_recurs - function to find natural square root
+ * @n: number to find the square root.
+ * @i: number to test.
+ * Return: The square root or -1 if it doesnt have square root.
+ */
 
+int _sqrt_recurs(int n, int i)
+{
 	if (n < 0)
 	{
-		i = 1;
 		return (-1);
 	}
-
 	if (i * i > n)
 	{
-		i = 1;
 		return (-1);
 	}
-
 	if (i * i == n)
 	{
-		y = i;
-		i = 1;
-		return (y);
+		return (i);
 	}
-
-	i++;
-	y = _sqrt_recursion(n);
-
-	i = 1;
-
-	return (y);
+	return (_sqrt_recurs(n, i + 1));
 
 }
