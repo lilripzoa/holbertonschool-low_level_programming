@@ -13,8 +13,9 @@
 char *str_concat(char *s1, char *s2)
 {
 	int i, y;
-	int longueur1 = (s1 == NULL) ? 0 : strlen(s1);
-	int longueur2 = (s2 == NULL) ? 0 : strlen(s2);
+	int longueur1 = (s1 != NULL) ? strlen(s1) : 0;
+	int longueur2 = (s2 != NULL) ? strlen(s2) : 0;
+
 	char *resultat = (char *)malloc((longueur1 + longueur2 + 1) * sizeof(char));
 
 	if (resultat == NULL)
