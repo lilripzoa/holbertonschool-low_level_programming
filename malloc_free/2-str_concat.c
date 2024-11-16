@@ -12,28 +12,35 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int i, y;
-	int longueur1 = (s1 != NULL) ? strlen(s1) : 0;
-	int longueur2 = (s2 != NULL) ? strlen(s2) : 0;
+	int i, j, len1, len2, len;
+	char *result;
 
-	char *resultat = (char *)malloc((longueur1 + longueur2 + 1) * sizeof(char));
+	len1 = len2 = 0;
 
-	if (resultat == NULL)
+	if (s1 != NULL)
 	{
+		i = 0;
+		while (s1[i++] != '\0')
+			len1++;
+	}
+
+	if (s2 != NULL)
+	{
+		i = 0;
+		while (s2[i++] != '\0')
+			len2++;
+	}
+
+	len = len1 + len2;
+	result = (char *)malloc(sizeof(char) * (len + 1));
+	if (result == NULL)
 		return (NULL);
-	}
 
-	for (i = 0; i < longueur1; i++)
-	{
-		resultat[i] = s1[i];
-	}
+	for (i = 0; i < len1; i++)
+		result[i] = s1[i];
+	for (j = 0; j < len2; j++, i++)
+		result[i] = s2[j];
+	result[len] = '\0';
 
-	for (y = 0; y < longueur2; y++)
-	{
-		resultat[longueur1 + y] = s2[y];
-	}
-
-	resultat[longueur1 + longueur2] = '\0';
-
-	return (resultat);
+	return (result);
 }
