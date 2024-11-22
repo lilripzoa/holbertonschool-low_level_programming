@@ -9,11 +9,11 @@
 
 void print_all(const char * const format, ...)
 {
-	va_list p;
-	char *star;
+	va_list lst;
+	char *ptr;
 	int i = 0;
 
-	va_start(p, format);
+	va_start(lst, format);
 	while (format == NULL)
 	{
 		printf("\n");
@@ -24,19 +24,19 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", (char) va_arg(p, int));
+				printf("%c", (char) va_arg(lst, int));
 				break;
 			case 'i':
-				printf("%d", va_arg(p, int));
+				printf("%d", va_arg(lst, int));
 				break;
 			case 'f':
-				printf("%f", (float) va_arg(p, double));
+				printf("%f", (float) va_arg(lst, double));
 				break;
 			case 's':
-				star = va_arg(p, char*);
-				if (star != NULL)
+				ptr = va_arg(lst, char*);
+				if (ptr != NULL)
 				{
-					printf("%s", star);
+					printf("%s", ptr);
 					break;
 				}
 				printf("(nil)");
@@ -48,6 +48,6 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 
-	va_end(ptr);
+	va_end(lst);
 	printf("\n");
 }
