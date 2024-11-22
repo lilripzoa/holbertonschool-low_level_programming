@@ -3,39 +3,36 @@
 #include "variadic_functions.h"
 
 /**
- * print_all - function that prints anything.
- * Return: nothing.
+ * print_all - Function that prints anything
+ * @format: List arguments
  */
 
 void print_all(const char * const format, ...)
 {
 	va_list ptr;
-	unsigned int i = 0, separator = 0;
-	char *string;
-	char c;
+	unsigned int i = 0;
+	char *string, current;
 
 	va_start(ptr, format);
 
 	while (format && format[i])
 	{
-		c = format[i];
+		current = format[i];
 
-		if (separator && (c == 'c' || c == 'i' || c == 'f' || c == 's'))
+		if (i > 0 && (current == 'c' || current == 'i' ||
+		current == 'f' || current == 's'))
 			printf(", ");
 
-		switch (c)
+		switch (current)
 		{
 			case 'c':
 				printf("%c", va_arg(ptr, int));
-				separator = 1;
 				break;
 			case 'i':
 				printf("%d", va_arg(ptr, int));
-				separator = 1;
 				break;
 			case 'f':
 				printf("%f", va_arg(ptr, double));
-				separator = 1;
 				break;
 			case 's':
 				string = va_arg(ptr, char *);
@@ -43,12 +40,11 @@ void print_all(const char * const format, ...)
 					printf("(nil)");
 				else
 					printf("%s", string);
-				separator = 1;
 				break;
-
 		}
 		i++;
 	}
+
 	va_end(ptr);
 	printf("\n");
 }
