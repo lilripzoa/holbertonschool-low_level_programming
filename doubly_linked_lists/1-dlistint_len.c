@@ -5,7 +5,7 @@
 
 /**
  * dlistint_len - function that returns the number of elements in a list.
- * @h. pointer.
+ * @h: pointer.
  * Return: number of elements.
  */
 
