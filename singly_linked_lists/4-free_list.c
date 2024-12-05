@@ -12,11 +12,15 @@
 void free_list(list_t *head)
 {
 	list_t *ptr;
-	while (head != NULL)
+	list_t *i;
+
+	ptr = head;
+
+	while (ptr != NULL)
 	{
-		ptr = head;
-		head = head->next;
+		i = ptr->next;
 		free(ptr->str);
 		free(ptr);
+		ptr = i;
 	}
 }
